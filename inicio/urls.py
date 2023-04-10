@@ -4,5 +4,5 @@ from inicio import views
 app_name = 'inicio'
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('', views.mi_vista, name='inicio'),
 ]
