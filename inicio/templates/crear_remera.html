@@ -9,7 +9,7 @@
 {% endblock h1_header %}
 
 {% block p_header %}
-<form action={% url 'inicio:listar_remeras' %} method="POST">
+<form action={% url 'inicio:crear_remera' %} method="POST">
     {% csrf_token %}
     <table>
         {{formulario}}
