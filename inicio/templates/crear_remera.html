@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <li>Este es mi primer template!!!</li>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Crear Remera</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Ingrese los datos para crear el objeto Remera</h1>
+{% endblock h1_header %}
+
+{% block p_header %}
+<form action={% url 'inicio:listar_remeras' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Crear</button>
+</form>
+{% endblock p_header %}

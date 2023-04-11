@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Remeras</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Listado de Remeras</h1>
+{% endblock h1_header %}
+
+{% block p_header %}
+<p>
+    <form action={% url 'inicio:listar_remeras' %} method="get">
+        {{formulario}}
+        <button>Buscar</button>
+    </form>
+</p>
+{% if remeras %}
+    {% for remera in remeras %}
+    <li>
+        Diseño: {{remera.disenio}} - Modelo: {{remera.modelo}} - Talle: {{remera.talle}} - Origen: {{remera.origen}}
+    </li>
+    {% endfor %}
+{% else %}
+    <h2>No hay datos ingresados.</h2>
+{% endif %}
+{% endblock p_header %}

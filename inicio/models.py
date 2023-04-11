@@ -5,11 +5,11 @@ from django.db import models
 class Remera(models.Model):
     modelo = models.CharField(max_length=20)
     talle = models.CharField(max_length=5)
-    diseño = models.CharField(max_length=20)
+    disenio = models.CharField(max_length=20)
     origen = models.CharField(max_length=20)
     
     def __str__(self):
-        return f'El modelo es "{self.modelo}" con diseño de "{self.diseño}", talle: "{self.talle}". Origen: "{self.origen}".'
+        return f'El modelo es "{self.modelo}" con diseño de "{self.disenio}", talle: "{self.talle}". Origen: "{self.origen}".'
     
 # class Remera(models.Model):
 #     modelo = models.CharField(max_length=20)
